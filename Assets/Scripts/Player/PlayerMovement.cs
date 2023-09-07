@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _runningSpeed = 1f;
+    [SerializeField] private float _runningSpeed = 4f;
+    [SerializeField] private float _sideRunningSpeed = 3f;
 
     [SerializeField] private MySlider _movementSlider;
 
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            transform.Translate(transform.right * Time.deltaTime * _movementSlider.value);
+            transform.Translate(transform.right * Time.deltaTime * _movementSlider.value * _sideRunningSpeed);
 
             if (_movementSlider.value < 0)
             {
