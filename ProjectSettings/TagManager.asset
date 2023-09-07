@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - EnemySpawner
   - Level
+  - Enemy
   layers:
   - Default
   - TransparentFX

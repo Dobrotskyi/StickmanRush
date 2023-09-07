@@ -1,7 +1,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MySlider : Slider
+public class PlayerInputSlider : Slider
 {
     public bool IsHeld { get; private set; } = false;
 

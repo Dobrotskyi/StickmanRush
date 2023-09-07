@@ -4,8 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _runningSpeed = 4f;
     [SerializeField] private float _sideRunningSpeed = 3f;
-
-    [SerializeField] private MySlider _movementSlider;
+    [SerializeField] private PlayerInputSlider _movementSlider;
 
     private Animator _animator;
     private bool _isRunning;
@@ -67,5 +66,16 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("ToTheLeft", false);
         if (_animator.GetBool("ToTheRight"))
             _animator.SetBool("ToTheRight", false);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+            DestroyThisObject();
+    }
+
+    private void DestroyThisObject()
+    {
+        Debug.Log("You Lost");
     }
 }
