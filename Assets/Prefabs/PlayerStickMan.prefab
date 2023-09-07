@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 1775804554823676289, guid: 48fffba7b8b83c64f89e6940db3e829d,
         type: 3}
       propertyPath: m_Name
-      value: Stickman_heads_sphere
+      value: PlayerStickMan
       objectReference: {fileID: 0}
     - target: {fileID: 4076315445077630830, guid: 48fffba7b8b83c64f89e6940db3e829d,
         type: 3}
@@ -66,5 +66,59 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1775804554823676289, guid: 48fffba7b8b83c64f89e6940db3e829d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3188765180534782008}
+    - targetCorrespondingSourceObject: {fileID: 1775804554823676289, guid: 48fffba7b8b83c64f89e6940db3e829d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2911964884239629095}
   m_SourcePrefab: {fileID: 100100000, guid: 48fffba7b8b83c64f89e6940db3e829d, type: 3}
+--- !u!1 &3354349052111391973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1775804554823676289, guid: 48fffba7b8b83c64f89e6940db3e829d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3902903875019849060}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &3188765180534782008
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354349052111391973}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 16
+  m_CollisionDetection: 0
+--- !u!114 &2911964884239629095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354349052111391973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2a32958abfaff4ba48ab48504c84ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _runningSpeed: 1
