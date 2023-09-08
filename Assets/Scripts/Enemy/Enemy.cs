@@ -4,11 +4,15 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private TextMesh _hpText;
     [SerializeField] private ParticleSystem _hitMarker;
+    private Animator _animator;
     private float HP = GameConfig.EnemiesHP;
 
     private void OnEnable()
     {
+        _animator = GetComponent<Animator>();
         _hpText.text = HP.ToString();
+        System.Random random = new System.Random();
+        _animator.Play(0, 0, (float)random.NextDouble());
     }
 
     private void TakeDamage()
