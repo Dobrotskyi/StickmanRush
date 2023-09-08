@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private const int ENEMY_DEATH_ANIM_COUNT = 3;
+
     [SerializeField] private TextMesh _hpText;
     [SerializeField] private ParticleSystem _hitMarker;
     private Animator _animator;
@@ -26,7 +28,10 @@ public class Enemy : MonoBehaviour
 
     private void OnKilled()
     {
-        Destroy(gameObject);
+        System.Random rand = new System.Random();
+        _animator.SetInteger("DeathNumber", rand.Next(0, ENEMY_DEATH_ANIM_COUNT));
+        GetComponent<Collider>().enabled = false;
+        _hpText.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)
