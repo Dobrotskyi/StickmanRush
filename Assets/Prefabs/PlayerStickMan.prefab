@@ -44,6 +44,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerStickman
       objectReference: {fileID: 0}
+    - target: {fileID: 1775804554823676289, guid: 48fffba7b8b83c64f89e6940db3e829d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4076315445077630830, guid: 48fffba7b8b83c64f89e6940db3e829d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -167,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _runningSpeed: 4
+  _sideRunningSpeed: 3
   _movementSlider: {fileID: 0}
 --- !u!114 &8176851554046805601
 MonoBehaviour:

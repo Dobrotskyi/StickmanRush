@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public static event Action<Vector3> EnemyKilledAtPosition;
+
     private const int ENEMY_DEATH_ANIM_COUNT = 3;
 
     [SerializeField] private TextMesh _hpText;
@@ -15,6 +18,16 @@ public class Enemy : MonoBehaviour
         _hpText.text = HP.ToString();
         System.Random random = new System.Random();
         _animator.Play(0, 0, (float)random.NextDouble());
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            TakeDamage();
+            Instantiate(_hitMarker, collision.contacts[0].point, Quaternion.identity);
+            Destroy(collision.gameObject);
+        }
     }
 
     private void TakeDamage()
@@ -32,15 +45,6 @@ public class Enemy : MonoBehaviour
         _animator.SetInteger("DeathNumber", rand.Next(0, ENEMY_DEATH_ANIM_COUNT));
         GetComponent<Collider>().enabled = false;
         _hpText.gameObject.SetActive(false);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            TakeDamage();
-            Instantiate(_hitMarker, collision.contacts[0].point, Quaternion.identity);
-            Destroy(collision.gameObject);
-        }
+        EnemyKilledAtPosition?.Invoke(transform.position);
     }
 }
