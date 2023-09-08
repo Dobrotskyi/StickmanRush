@@ -30,5 +30,4 @@ public class PlayerShooting : MonoBehaviour
             yield return new WaitForSeconds(GameConfig.BasicFireRate);
         }
     }
-
 }
