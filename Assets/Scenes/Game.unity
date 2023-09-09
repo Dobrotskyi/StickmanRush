@@ -979,6 +979,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _quad: {fileID: 5977550464386289736, guid: e6251f8919314784aae10ba88b1dab69, type: 3}
+  _bossQuad: {fileID: 2557812921243997360, guid: 16093b8482383ec42acebb9efa3ffae6,
+    type: 3}
 --- !u!1001 &2004274065
 PrefabInstance:
   m_ObjectHideFlags: 0

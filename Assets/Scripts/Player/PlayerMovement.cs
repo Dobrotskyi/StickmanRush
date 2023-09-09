@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public event Action PlayerReadyForBoss;
+
     [SerializeField] private float _runningSpeed = 4f;
     [SerializeField] private float _sideRunningSpeed = 3f;
     [SerializeField] private PlayerInputSlider _movementSlider;
@@ -71,10 +74,10 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
-            DestroyThisObject();
+            Die();
     }
 
-    private void DestroyThisObject()
+    private void Die()
     {
         Debug.Log("You Lost");
     }

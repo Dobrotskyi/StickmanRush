@@ -5,21 +5,21 @@ namespace EnemyMechanics
 {
     public class Enemy : MonoBehaviour
     {
-        private const int ENEMY_DEATH_ANIM_COUNT = 3;
-
         public static event Action<Vector3> EnemyKilledAtPosition;
+
+        protected virtual int EnemyDeathAnimCount => 3;
+        protected virtual int HP { set; get; } = GameConfig.EnemiesHP;
+        protected Animator EnemyAnimator;
 
         [SerializeField] private TextMesh _hpText;
         [SerializeField] private ParticleSystem _hitMarker;
-        private Animator _animator;
-        private float HP = GameConfig.EnemiesHP;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            _animator = GetComponent<Animator>();
+            EnemyAnimator = GetComponent<Animator>();
             _hpText.text = HP.ToString();
             System.Random random = new System.Random();
-            _animator.Play(0, 0, (float)random.NextDouble());
+            EnemyAnimator.Play(0, 0, (float)random.NextDouble());
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -44,7 +44,7 @@ namespace EnemyMechanics
         private void OnKilled()
         {
             System.Random rand = new System.Random();
-            _animator.SetInteger("DeathNumber", rand.Next(0, ENEMY_DEATH_ANIM_COUNT));
+            EnemyAnimator.SetInteger("DeathNumber", rand.Next(0, EnemyDeathAnimCount));
             GetComponent<Collider>().enabled = false;
             _hpText.gameObject.SetActive(false);
             EnemyKilledAtPosition?.Invoke(transform.position);
