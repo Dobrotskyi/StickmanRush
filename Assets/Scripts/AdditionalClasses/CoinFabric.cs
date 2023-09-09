@@ -1,4 +1,5 @@
 using UnityEngine;
+using EnemyMechanics;
 
 public class CoinFabric : MonoBehaviour
 {

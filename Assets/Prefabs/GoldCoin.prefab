@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 5136918722962732521}
   - component: {fileID: 6550733350495279318}
   - component: {fileID: 1682247684238835631}
-  - component: {fileID: 8989860714206345585}
+  - component: {fileID: 2214465268154874904}
   m_Layer: 0
   m_Name: GoldCoin
   m_TagString: Untagged
@@ -173,7 +173,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!54 &8989860714206345585
+--- !u!54 &2214465268154874904
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
