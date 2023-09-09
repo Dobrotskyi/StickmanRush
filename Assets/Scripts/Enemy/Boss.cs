@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ namespace EnemyMechanics
 {
     public class Boss : Enemy
     {
+        public static event Action PlayerGotKicked;
+
         protected override int EnemyDeathAnimCount => 1;
         protected override int HP { set; get; } = GameConfig.BossHP;
 
@@ -27,18 +30,30 @@ namespace EnemyMechanics
 
         private void StartWalkingTowardsPlayer()
         {
-            transform.rotation = Quaternion.LookRotation(_playerMovement.transform.position);
+            transform.rotation = Quaternion.LookRotation(_playerMovement.transform.position - transform.position);
             StartCoroutine(WalkingTowardsPlayer());
         }
 
         private IEnumerator WalkingTowardsPlayer()
         {
             Vector3 playerPositon = _playerMovement.transform.position;
+            EnemyAnimator.SetTrigger("WalkTowards");
+            yield return new WaitForFixedUpdate();
             while (true)
             {
-                transform.Translate((playerPositon - transform.position) * _speed * Time.deltaTime);
+                transform.Translate((transform.position - playerPositon).normalized * _speed * Time.deltaTime);
+                if (Vector3.Distance(transform.position, playerPositon) <= 1.3f)
+                {
+                    EnemyAnimator.SetTrigger("Kick");
+                    break;
+                }
                 yield return new WaitForFixedUpdate();
             }
+        }
+
+        private void PlayerKickedAnimEvent()
+        {
+            PlayerGotKicked?.Invoke();
         }
     }
 }

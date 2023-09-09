@@ -7,7 +7,22 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _bulletSpawnPoint;
 
+    private PlayerMovement _playerMovement;
+
     private bool _isShooting;
+
+    private void OnEnable()
+    {
+        _playerMovement = GetComponent<PlayerMovement>();
+        _playerMovement.PlayerMovingAtPosition += StopAllCoroutines;
+        _playerMovement.PlayerReadyForBoss += StartShooting;
+    }
+
+    private void OnDisable()
+    {
+        _playerMovement.PlayerMovingAtPosition -= StopAllCoroutines;
+        _playerMovement.PlayerReadyForBoss -= StartShooting;
+    }
 
     private void Update()
     {
@@ -15,9 +30,11 @@ public class PlayerShooting : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 _isShooting = true;
-                StartCoroutine(Shoot());
+                StartShooting();
             }
     }
+
+    private void StartShooting() => StartCoroutine(Shoot());
 
     private IEnumerator Shoot()
     {
