@@ -6,13 +6,14 @@ namespace EnemyMechanics
     public class Boss : Enemy
     {
         protected override int EnemyDeathAnimCount => 1;
-        protected override int HP { set; get; } = GameConfig.BossHP;
 
         [SerializeField] private float _speed = 3f;
         private PlayerMovement _playerMovement;
 
         protected override void OnEnable()
         {
+            HP = GameConfig.BossHP;
+
             base.OnEnable();
 
             _playerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();

@@ -10,7 +10,7 @@ namespace EnemyMechanics
         public static event Action PlayerGotKicked;
 
         protected virtual int EnemyDeathAnimCount => 3;
-        protected virtual int HP { set; get; } = GameConfig.EnemiesHP;
+        protected int HP { set; get; } = GameConfig.EnemyHP;
         protected Animator EnemyAnimator;
 
         [SerializeField] private TextMesh _hpText;

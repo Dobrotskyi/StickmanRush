@@ -5,6 +5,6 @@ public static class GameConfig
     public const float BulletTimeOfLifeInSec = 2f;
     public const int BasicDamage = 2;
     public const int BossHP = 150;
-    public const int EnemiesHP = 10;
+    public const int EnemyHP = 10;
     public const int CoinReward = 50;
 }
