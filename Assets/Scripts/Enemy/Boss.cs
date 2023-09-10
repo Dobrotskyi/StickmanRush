@@ -15,6 +15,7 @@ namespace EnemyMechanics
 
         protected override void OnEnable()
         {
+            CanReceiveDamage = false;
             base.OnEnable();
 
             _playerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
@@ -38,6 +39,7 @@ namespace EnemyMechanics
 
         private void StartWalkingTowardsPlayer()
         {
+            CanReceiveDamage = true;
             transform.rotation = Quaternion.LookRotation(_playerMovement.transform.position - transform.position);
             StartCoroutine(WalkingTowardsPlayer());
         }

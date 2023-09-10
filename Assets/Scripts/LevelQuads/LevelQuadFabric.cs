@@ -13,6 +13,7 @@ namespace LevelQuads
         private void OnEnable()
         {
             LevelQuad.PlayerPassedTrigger += SpawnNewQuad;
+            _levelSectionBeforeBoss = Random.Range(2, 3);
         }
 
         private void OnDisable()

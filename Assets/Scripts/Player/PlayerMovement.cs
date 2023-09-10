@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private void Die()
     {
         StopAllCoroutines();
+        _animator.ResetTrigger("Death");
         _animator.SetTrigger("Death");
         PlayerLost?.Invoke();
     }

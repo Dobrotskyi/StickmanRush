@@ -11,6 +11,9 @@ public class Store : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _upgradeFireRateFieldPrice;
     [SerializeField] private TextMeshProUGUI _upgradeFireRateFieldLevel;
+
+    [SerializeField] private TextMeshProUGUI _upgradeDamageAmt;
+
     [SerializeField] private Button _upgradeFireRateButton;
     [SerializeField] private GameObject _maxLevelReached;
     [SerializeField] private GameObject _upgradeTextGroup;
@@ -34,7 +37,7 @@ public class Store : MonoBehaviour
 
     public void RestAllLevels()
     {
-        PlayerPrefs.SetFloat("BasicShotDelay", 0.5f);
+        PlayerPrefs.SetInt("FireRateLevel", 1);
         PlayerPrefs.SetInt("DamageLevel", 1);
         UpdateFireRateText();
         UpdateDamageText();
@@ -44,6 +47,8 @@ public class Store : MonoBehaviour
     {
         UpdateDamageText();
         UpdateFireRateText();
+
+        _upgradeDamageAmt.text += GameBalance.DamageUpgrade.ToString();
     }
 
     private void UpdateDamageText()

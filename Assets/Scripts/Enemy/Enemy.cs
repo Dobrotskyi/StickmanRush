@@ -11,6 +11,7 @@ namespace EnemyMechanics
 
         protected virtual int EnemyDeathAnimCount => 3;
         protected int HP { set; get; }
+        protected bool CanReceiveDamage = true;
         protected Animator EnemyAnimator;
 
         [SerializeField] private TextMesh _hpText;
@@ -31,8 +32,11 @@ namespace EnemyMechanics
         {
             if (collision.gameObject.CompareTag("Bullet"))
             {
-                TakeDamage();
-                Instantiate(_hitMarker, collision.contacts[0].point, Quaternion.identity);
+                if (CanReceiveDamage)
+                {
+                    TakeDamage();
+                    Instantiate(_hitMarker, collision.contacts[0].point, Quaternion.identity);
+                }
                 Destroy(collision.gameObject);
             }
             else if (collision.gameObject.CompareTag("Player"))

@@ -964,7 +964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.304815, y: 0.00000003050068, z: -0.000000009761603, w: 0.9524116}
+  m_LocalRotation: {x: 0.30481496, y: -0.000000011164024, z: 0.0000000035729946, w: 0.9524116}
   m_LocalPosition: {x: 0.011891663, y: 4.57, z: -7.986}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
@@ -1232,7 +1232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183691746}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.304815, y: 0.00000003050068, z: -0.000000009761603, w: 0.9524116}
+  m_LocalRotation: {x: 0.30481496, y: -0.000000011164024, z: 0.0000000035729946, w: 0.9524116}
   m_LocalPosition: {x: 0.011891663, y: 4.57, z: -7.986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1999,7 +1999,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79cfad5c487c80d40af77abb0bd4e0a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _basicQuad: {fileID: 0}
+  _basicQuad: {fileID: 5977550464386289736, guid: e6251f8919314784aae10ba88b1dab69,
+    type: 3}
   _bossQuad: {fileID: 2557812921243997360, guid: 16093b8482383ec42acebb9efa3ffae6,
     type: 3}
 --- !u!1 &1805565642 stripped
@@ -4119,11 +4120,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6027821028273935719, guid: 850728a13a764a5428ba74c2398617df,
+        type: 3}
+      propertyPath: m_text
+      value: Upgrade Damage +
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027821028273935719, guid: 850728a13a764a5428ba74c2398617df,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 52.05
+      objectReference: {fileID: 0}
     - target: {fileID: 6653324043245544127, guid: 850728a13a764a5428ba74c2398617df,
         type: 3}
       propertyPath: _body
       value: 
       objectReference: {fileID: 9212891086877455069}
+    - target: {fileID: 6653324043245544127, guid: 850728a13a764a5428ba74c2398617df,
+        type: 3}
+      propertyPath: _upgradeDamageAmt
+      value: 
+      objectReference: {fileID: 8557391396629285744}
     - target: {fileID: 7150217223752826916, guid: 850728a13a764a5428ba74c2398617df,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4194,6 +4210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -123.0601
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056373451193711654, guid: 850728a13a764a5428ba74c2398617df,
+        type: 3}
+      propertyPath: m_Name
+      value: ImageBG
       objectReference: {fileID: 0}
     - target: {fileID: 8985530017387950061, guid: 850728a13a764a5428ba74c2398617df,
         type: 3}
@@ -5029,6 +5050,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2709288945312962507}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8557391396629285744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6027821028273935719, guid: 850728a13a764a5428ba74c2398617df,
+    type: 3}
+  m_PrefabInstance: {fileID: 2709288945312962507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9212891086877455069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9049622518712767677, guid: 850728a13a764a5428ba74c2398617df,
