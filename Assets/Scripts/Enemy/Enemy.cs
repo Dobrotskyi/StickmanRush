@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace EnemyMechanics
 {
+    [RequireComponent(typeof(Animator))]
     public class Enemy : MonoBehaviour
     {
         public static event Action<Vector3> EnemyKilledAtPosition;

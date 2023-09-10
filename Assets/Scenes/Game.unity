@@ -663,7 +663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.304815, y: 0.00000003050068, z: -0.000000009761603, w: 0.9524116}
+  m_LocalRotation: {x: 0.30481496, y: -0.000000011164024, z: 0.0000000035729946, w: 0.9524116}
   m_LocalPosition: {x: 0.011891663, y: 4.57, z: -7.986}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
@@ -768,7 +768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183691746}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.304815, y: 0.00000003050068, z: -0.000000009761603, w: 0.9524116}
+  m_LocalRotation: {x: 0.30481496, y: -0.000000011164024, z: 0.0000000035729946, w: 0.9524116}
   m_LocalPosition: {x: 0.011891663, y: 4.57, z: -7.986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2700,6 +2700,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7049346068555803434, guid: 49b577875689c1c45a4cd4b56bbf387e,
+        type: 3}
+      propertyPath: _popDown
+      value: 
+      objectReference: {fileID: 4724612451775020082, guid: d4646534ecd201c4195bfc77ae94af26,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

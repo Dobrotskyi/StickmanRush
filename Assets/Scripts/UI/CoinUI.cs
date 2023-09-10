@@ -4,6 +4,8 @@ using UnityEngine;
 public class CoinUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _coinAmountText;
+    [SerializeField] private PopDownText _popDown;
+    private int _lastValue = -1;
 
     private void Awake()
     {
@@ -16,6 +18,17 @@ public class CoinUI : MonoBehaviour
         CoinTracker.AmtUpdated -= UpdateUI;
     }
 
-    private void UpdateUI() => _coinAmountText.text = CoinTracker.Instance.CoinAmt.ToString();
+    private void UpdateUI()
+    {
+        if (_lastValue == -1)
+            _lastValue = CoinTracker.Instance.CoinAmt;
 
+        int newValue = CoinTracker.Instance.CoinAmt;
+        _coinAmountText.text = newValue.ToString();
+        if (_lastValue != newValue)
+        {
+            _popDown.Init(transform, (newValue - _lastValue).ToString());
+            _lastValue = newValue;
+        }
+    }
 }
