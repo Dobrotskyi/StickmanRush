@@ -20,20 +20,16 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-    }
-
-    private void OnEnable()
-    {
         Enemy.PlayerGotKicked += Die;
         PlayerDeathFromFallingOff.FallOff += Die;
-        GameStarter.Start += StartLevelRun;
+        GameStarter.Instance.Start += StartLevelRun;
     }
 
     private void OnDisable()
     {
         Enemy.PlayerGotKicked -= Die;
         PlayerDeathFromFallingOff.FallOff -= Die;
-        GameStarter.Start -= StartLevelRun;
+        GameStarter.Instance.Start -= StartLevelRun;
     }
 
     private void StartLevelRun() => StartCoroutine(LevelRun());
@@ -41,8 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private void Die()
     {
         StopAllCoroutines();
-        _animator.ResetTrigger("Death");
-        _animator.SetTrigger("Death");
+        _animator.SetBool("Dead", true);
         PlayerLost?.Invoke();
     }
 
@@ -56,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator LevelRun()
     {
+        Debug.Log("LevelRun");
         while (true)
         {
             transform.Translate(transform.forward * _runningSpeed * Time.deltaTime);

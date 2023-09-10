@@ -18,7 +18,7 @@ public class PlayerShooting : MonoBehaviour
         _playerMovement.PlayerReadyForBoss += StartShooting;
         PlayerMovement.PlayerLost += StopAllCoroutines;
         Boss.BossIsDead += StopAllCoroutines;
-        GameStarter.Start += StartShooting;
+        GameStarter.Instance.Start += StartShooting;
     }
 
     private void OnDisable()
@@ -27,7 +27,7 @@ public class PlayerShooting : MonoBehaviour
         _playerMovement.PlayerReadyForBoss -= StartShooting;
         PlayerMovement.PlayerLost -= StopAllCoroutines;
         Boss.BossIsDead -= StopAllCoroutines;
-        GameStarter.Start -= StartShooting;
+        GameStarter.Instance.Start -= StartShooting;
     }
 
     private void StartShooting() => StartCoroutine(Shoot());

@@ -1,4 +1,5 @@
 using EnemyMechanics;
+using System;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -12,12 +13,14 @@ public class UIManager : MonoBehaviour
     {
         PlayerMovement.PlayerLost += ShowLostMenu;
         Boss.BossIsDead += ShowWinMenu;
+        GameStarter.Instance.Start += GameStarted;
     }
 
     private void OnDisable()
     {
         PlayerMovement.PlayerLost -= ShowLostMenu;
         Boss.BossIsDead -= ShowWinMenu;
+        GameStarter.Instance.Start -= GameStarted;
     }
 
     private void ShowLostMenu()
@@ -29,6 +32,8 @@ public class UIManager : MonoBehaviour
     {
         _wonMenu.SetActive(true);
     }
+
+    public void StartGameButtonPressed() => GameStarter.Instance.StartGame();
 
     public void GameStarted()
     {

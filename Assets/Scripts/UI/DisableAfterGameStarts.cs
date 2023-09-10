@@ -4,12 +4,12 @@ public class DisableAfterGameStarts : MonoBehaviour
 {
     private void OnEnable()
     {
-        GameStarter.Start += DisableButton;
+        GameStarter.Instance.Start += DisableButton;
     }
 
     private void OnDisable()
     {
-        GameStarter.Start -= DisableButton;
+        GameStarter.Instance.Start -= DisableButton;
     }
 
     private void DisableButton() => gameObject.SetActive(false);
