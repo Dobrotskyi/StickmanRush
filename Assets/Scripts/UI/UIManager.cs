@@ -5,6 +5,8 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject _lostMenu;
     [SerializeField] private GameObject _wonMenu;
+    [SerializeField] private GameObject _playButton;
+    [SerializeField] private GameObject _inputSlider;
 
     private void OnEnable()
     {
@@ -26,5 +28,11 @@ public class UIManager : MonoBehaviour
     private void ShowWinMenu()
     {
         _wonMenu.SetActive(true);
+    }
+
+    public void GameStarted()
+    {
+        _playButton.SetActive(false);
+        _inputSlider.SetActive(true);
     }
 }

@@ -43,6 +43,7 @@ public class PlayerShooting : MonoBehaviour
 
     private IEnumerator Shoot()
     {
+        yield return new WaitForSeconds(0.1f);
         while (true)
         {
             GameObject bullet = Instantiate(_bulletPrefab, _bulletSpawnPoint.position, _bulletSpawnPoint.transform.rotation);
