@@ -15,14 +15,14 @@ namespace EnemyMechanics
 
         protected override void OnEnable()
         {
-            HP = GameBalance.BossHP;
-
             base.OnEnable();
 
             _playerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
             _playerMovement.PlayerReadyForBoss += StartWalkingTowardsPlayer;
             transform.rotation = Quaternion.LookRotation(_playerMovement.transform.position - transform.position);
         }
+
+        protected override void SetHP() => HP = GameBalance.BossHP;
 
         protected override void OnKilled()
         {

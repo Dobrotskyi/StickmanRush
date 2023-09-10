@@ -10,7 +10,7 @@ namespace EnemyMechanics
         public static event Action PlayerGotKicked;
 
         protected virtual int EnemyDeathAnimCount => 3;
-        protected int HP { set; get; } = GameBalance.EnemyHP;
+        protected int HP { set; get; }
         protected Animator EnemyAnimator;
 
         [SerializeField] private TextMesh _hpText;
@@ -18,11 +18,14 @@ namespace EnemyMechanics
 
         protected virtual void OnEnable()
         {
+            SetHP();
             EnemyAnimator = GetComponent<Animator>();
             _hpText.text = HP.ToString();
             System.Random random = new System.Random();
             EnemyAnimator.Play(0, 0, (float)random.NextDouble());
         }
+
+        protected virtual void SetHP() => HP = GameBalance.EnemyHP;
 
         private void OnCollisionEnter(Collision collision)
         {
