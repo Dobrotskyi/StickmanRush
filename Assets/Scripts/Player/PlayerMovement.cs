@@ -15,9 +15,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerInputSlider _movementSlider;
 
     private Animator _animator;
-    //temporary
-    private bool _isRunning;
-    //temporary
     private bool _runningToTheSide;
 
     private void Awake()
@@ -29,13 +26,17 @@ public class PlayerMovement : MonoBehaviour
     {
         Enemy.PlayerGotKicked += Die;
         PlayerDeathFromFallingOff.FallOff += Die;
+        GameStarter.Start += StartLevelRun;
     }
 
     private void OnDisable()
     {
         Enemy.PlayerGotKicked -= Die;
         PlayerDeathFromFallingOff.FallOff -= Die;
+        GameStarter.Start -= StartLevelRun;
     }
+
+    private void StartLevelRun() => StartCoroutine(LevelRun());
 
     private void Die()
     {
@@ -46,13 +47,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //temporary
-        if (!_isRunning)
-            if (Input.GetMouseButtonDown(1))
-                StartCoroutine(LevelRun());
-
-        //temporary
-
         if (_movementSlider.IsHeld && _movementSlider.value != 0)
             _runningToTheSide = true;
         else

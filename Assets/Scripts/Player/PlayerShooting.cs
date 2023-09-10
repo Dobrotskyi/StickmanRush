@@ -10,7 +10,6 @@ public class PlayerShooting : MonoBehaviour
 
     private PlayerMovement _playerMovement;
 
-    private bool _isShooting;
 
     private void OnEnable()
     {
@@ -19,6 +18,7 @@ public class PlayerShooting : MonoBehaviour
         _playerMovement.PlayerReadyForBoss += StartShooting;
         PlayerMovement.PlayerLost += StopAllCoroutines;
         Boss.BossIsDead += StopAllCoroutines;
+        GameStarter.Start += StartShooting;
     }
 
     private void OnDisable()
@@ -27,16 +27,7 @@ public class PlayerShooting : MonoBehaviour
         _playerMovement.PlayerReadyForBoss -= StartShooting;
         PlayerMovement.PlayerLost -= StopAllCoroutines;
         Boss.BossIsDead -= StopAllCoroutines;
-    }
-
-    private void Update()
-    {
-        if (!_isShooting)
-            if (Input.GetMouseButtonDown(1))
-            {
-                _isShooting = true;
-                StartShooting();
-            }
+        GameStarter.Start -= StartShooting;
     }
 
     private void StartShooting() => StartCoroutine(Shoot());
