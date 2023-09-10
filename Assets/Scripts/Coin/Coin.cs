@@ -10,6 +10,7 @@ public class Coin : MonoBehaviour
     private void OnEnable()
     {
         _animator = GetComponent<Animator>();
+        Destroy(gameObject, 30f);
     }
 
     private void OnTriggerEnter(Collider other)

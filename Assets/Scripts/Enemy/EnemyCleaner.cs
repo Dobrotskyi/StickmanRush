@@ -16,7 +16,9 @@ namespace EnemyMechanics
         private void FixedUpdate()
         {
             if (transform.position.z - _playerTransform.position.z < DISTANCE_BEHIND_PLAYER)
-                Destroy(gameObject);
+            {
+                Destroy(transform.root.gameObject);
+            }
         }
     }
 }
