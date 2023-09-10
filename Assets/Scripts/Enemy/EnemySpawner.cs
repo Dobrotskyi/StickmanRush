@@ -21,7 +21,7 @@ namespace EnemyMechanics
             System.Random rand = new System.Random();
             while (true)
             {
-                newSpawnPos.z += i * GameConfig.EnemySpawnFrequency;
+                newSpawnPos.z += i * GameBalance.EnemySpawnFrequency;
                 newSpawnPos.x = Utility.RandomFloatInRange(rand, -_yOffset, _yOffset);
 
                 GameObject newObject = new("Enemy");

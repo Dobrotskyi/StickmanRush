@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 3086292140996279370}
   - component: {fileID: 4505228789293685168}
   - component: {fileID: 9206581021219315050}
+  - component: {fileID: 8100586978867447789}
   m_Layer: 5
   m_Name: OpenStoreButton
   m_TagString: Untagged
@@ -186,6 +187,18 @@ MonoBehaviour:
   _storeSprite: {fileID: 21300078, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   _goBackSprite: {fileID: 21300120, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   _image: {fileID: 7904058221012952689}
+--- !u!114 &8100586978867447789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3704079412950885213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d454abf7c0ec164aa978e10f50c18e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6800325080869550028
 GameObject:
   m_ObjectHideFlags: 0

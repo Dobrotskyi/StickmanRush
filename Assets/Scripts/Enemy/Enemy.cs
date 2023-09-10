@@ -10,7 +10,7 @@ namespace EnemyMechanics
         public static event Action PlayerGotKicked;
 
         protected virtual int EnemyDeathAnimCount => 3;
-        protected int HP { set; get; } = GameConfig.EnemyHP;
+        protected int HP { set; get; } = GameBalance.EnemyHP;
         protected Animator EnemyAnimator;
 
         [SerializeField] private TextMesh _hpText;
@@ -38,7 +38,7 @@ namespace EnemyMechanics
 
         private void TakeDamage()
         {
-            HP -= GameConfig.BasicDamage;
+            HP -= GameBalance.Damage;
             _hpText.text = HP.ToString();
 
             if (HP <= 0)

@@ -15,7 +15,7 @@ namespace EnemyMechanics
 
         protected override void OnEnable()
         {
-            HP = GameConfig.BossHP;
+            HP = GameBalance.BossHP;
 
             base.OnEnable();
 

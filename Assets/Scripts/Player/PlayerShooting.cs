@@ -40,8 +40,8 @@ public class PlayerShooting : MonoBehaviour
             GameObject bullet = Instantiate(_bulletPrefab, _bulletSpawnPoint.position, _bulletSpawnPoint.transform.rotation);
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             rb.AddForce(bullet.transform.forward * _shotForce, ForceMode.VelocityChange);
-            Destroy(bullet, GameConfig.BulletTimeOfLifeInSec);
-            yield return new WaitForSeconds(GameConfig.BasicFireRate);
+            Destroy(bullet, GameBalance.BulletTimeOfLifeInSec);
+            yield return new WaitForSeconds(GameBalance.FireRate);
         }
     }
 }

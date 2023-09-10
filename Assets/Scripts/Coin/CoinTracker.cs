@@ -46,15 +46,24 @@ public class CoinTracker
         }
     }
 
+    public void Withdraw(int amt)
+    {
+        if (CoinAmt >= amt)
+        {
+            CoinAmt -= amt;
+            AmtUpdated?.Invoke();
+        }
+    }
+
     private void CoinCollected()
     {
-        CoinAmt += GameConfig.CoinReward;
+        CoinAmt += GameBalance.CoinReward;
         AmtUpdated?.Invoke();
     }
 
     private void RewardForBoss()
     {
-        CoinAmt += GameConfig.RewardForBoss;
+        CoinAmt += GameBalance.RewardForBoss;
         AmtUpdated?.Invoke();
     }
 
