@@ -1,3 +1,4 @@
+using EnemyMechanics;
 using System;
 using UnityEngine;
 
@@ -6,8 +7,16 @@ public class CoinTracker
     public static event Action AmtUpdated;
 
     private static CoinTracker s_instance;
-    private CoinTracker() { Coin.CollectedByPlayer += CoinCollected; }
-    ~CoinTracker() { Coin.CollectedByPlayer -= CoinCollected; }
+    private CoinTracker()
+    {
+        Coin.CollectedByPlayer += CoinCollected;
+        Boss.BossIsDead += RewardForBoss;
+    }
+    ~CoinTracker()
+    {
+        Coin.CollectedByPlayer -= CoinCollected;
+        Boss.BossIsDead -= RewardForBoss;
+    }
 
     public static CoinTracker Instance
     {
@@ -40,6 +49,12 @@ public class CoinTracker
     private void CoinCollected()
     {
         CoinAmt += GameConfig.CoinReward;
+        AmtUpdated?.Invoke();
+    }
+
+    private void RewardForBoss()
+    {
+        CoinAmt += GameConfig.RewardForBoss;
         AmtUpdated?.Invoke();
     }
 

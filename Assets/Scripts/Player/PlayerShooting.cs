@@ -1,3 +1,4 @@
+using EnemyMechanics;
 using System.Collections;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class PlayerShooting : MonoBehaviour
         _playerMovement.PlayerMovingAtPosition += StopAllCoroutines;
         _playerMovement.PlayerReadyForBoss += StartShooting;
         PlayerMovement.PlayerLost += StopAllCoroutines;
+        Boss.BossIsDead += StopAllCoroutines;
     }
 
     private void OnDisable()
@@ -24,6 +26,7 @@ public class PlayerShooting : MonoBehaviour
         _playerMovement.PlayerMovingAtPosition -= StopAllCoroutines;
         _playerMovement.PlayerReadyForBoss -= StartShooting;
         PlayerMovement.PlayerLost -= StopAllCoroutines;
+        Boss.BossIsDead -= StopAllCoroutines;
     }
 
     private void Update()

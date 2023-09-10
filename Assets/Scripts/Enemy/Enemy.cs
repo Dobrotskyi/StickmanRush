@@ -45,7 +45,7 @@ namespace EnemyMechanics
                 OnKilled();
         }
 
-        private void OnKilled()
+        protected virtual void OnKilled()
         {
             System.Random rand = new System.Random();
             EnemyAnimator.SetInteger("DeathNumber", rand.Next(0, EnemyDeathAnimCount));

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ namespace EnemyMechanics
 {
     public class Boss : Enemy
     {
+        public static event Action BossIsDead;
+
         protected override int EnemyDeathAnimCount => 1;
 
         [SerializeField] private float _speed = 3f;
@@ -19,6 +22,13 @@ namespace EnemyMechanics
             _playerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
             _playerMovement.PlayerReadyForBoss += StartWalkingTowardsPlayer;
             transform.rotation = Quaternion.LookRotation(_playerMovement.transform.position - transform.position);
+        }
+
+        protected override void OnKilled()
+        {
+            base.OnKilled();
+            BossIsDead?.Invoke();
+            StopAllCoroutines();
         }
 
         private void OnDisable()
