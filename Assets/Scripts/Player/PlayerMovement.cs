@@ -51,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator LevelRun()
     {
-        Debug.Log("LevelRun");
         while (true)
         {
             transform.Translate(transform.forward * _runningSpeed * Time.deltaTime);
