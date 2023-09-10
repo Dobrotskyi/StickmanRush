@@ -28,6 +28,7 @@ public class GameBalanceSettingsUI : MonoBehaviour
         GameBalance.EnemyHP = int.Parse(_fields[i++].text);
         GameBalance.CoinReward = int.Parse(_fields[i++].text);
         GameBalance.RewardForBoss = int.Parse(_fields[i++].text);
+        GameBalance.DamageUpgrade = int.Parse(_fields[i++].text);
     }
 
     public void DiscardChanges()
@@ -50,5 +51,6 @@ public class GameBalanceSettingsUI : MonoBehaviour
         _fields[i++].text = GameBalance.EnemyHP.ToString();
         _fields[i++].text = GameBalance.CoinReward.ToString();
         _fields[i++].text = GameBalance.RewardForBoss.ToString();
+        _fields[i++].text = GameBalance.DamageUpgrade.ToString();
     }
 }

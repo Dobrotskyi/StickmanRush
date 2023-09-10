@@ -4,10 +4,21 @@ public class GameBalance
 {
     public const float BulletTimeOfLifeInSec = 2f;
 
-    private const int DamageUpgrade = 5;
     private const float ShotDelayUpgrade = 0.05f;
     private const float MinShotDelay = 0.1f;
     private const int BasicPriceForUpgrade = 50;
+
+    public static int DamageUpgrade
+    {
+        get
+        {
+            if (!PlayerPrefs.HasKey("DamageUpgrade"))
+                PlayerPrefs.SetInt("DamageUpgrade", 5);
+            return PlayerPrefs.GetInt("DamageUpgrade");
+        }
+
+        set => PlayerPrefs.SetInt("DamageUpgrade", value);
+    }
 
     public static float EnemySpawnFrequency
     {
@@ -19,7 +30,6 @@ public class GameBalance
         }
 
         set => PlayerPrefs.SetFloat("EnemySpawnFrequency", value);
-
     }
 
     public static int BossHP
@@ -32,7 +42,6 @@ public class GameBalance
         }
 
         set => PlayerPrefs.SetInt("BossHP", value);
-
     }
 
     public static int RewardForBoss
@@ -45,7 +54,6 @@ public class GameBalance
         }
 
         set => PlayerPrefs.SetInt("RewardForBoss", value);
-
     }
 
     public static int EnemyHP
@@ -58,7 +66,6 @@ public class GameBalance
         }
 
         set => PlayerPrefs.SetInt("EnemyHP", value);
-
     }
 
     public static int CoinReward
@@ -71,7 +78,6 @@ public class GameBalance
         }
 
         set => PlayerPrefs.SetInt("CoinReward", value);
-
     }
 
     public static int BasicDamage
@@ -84,7 +90,6 @@ public class GameBalance
         }
 
         set => PlayerPrefs.SetInt("BasicDamage", value);
-
     }
     public static float BasicShotDelay
     {
@@ -96,7 +101,6 @@ public class GameBalance
         }
 
         set => PlayerPrefs.SetFloat("BasicShotDelay", value);
-
     }
 
     public static int CurrentDamageLevel
