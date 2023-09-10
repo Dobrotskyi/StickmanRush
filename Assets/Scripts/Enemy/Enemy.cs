@@ -7,6 +7,7 @@ namespace EnemyMechanics
     public class Enemy : MonoBehaviour
     {
         public static event Action<Vector3> EnemyKilledAtPosition;
+        public static event Action PlayerGotKicked;
 
         protected virtual int EnemyDeathAnimCount => 3;
         protected virtual int HP { set; get; } = GameConfig.EnemiesHP;
@@ -31,6 +32,8 @@ namespace EnemyMechanics
                 Instantiate(_hitMarker, collision.contacts[0].point, Quaternion.identity);
                 Destroy(collision.gameObject);
             }
+            else if (collision.gameObject.CompareTag("Player"))
+                PlayerGotKicked?.Invoke();
         }
 
         private void TakeDamage()
@@ -49,6 +52,11 @@ namespace EnemyMechanics
             GetComponent<Collider>().enabled = false;
             _hpText.gameObject.SetActive(false);
             EnemyKilledAtPosition?.Invoke(transform.position);
+        }
+
+        private void PlayerKickedAnimEvent()
+        {
+            PlayerGotKicked?.Invoke();
         }
     }
 }

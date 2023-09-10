@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static event Action PlayerLost;
     public event Action PlayerReadyForBoss;
     public event Action PlayerMovingAtPosition;
 
@@ -26,12 +27,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        Boss.PlayerGotKicked += Die;
+        Enemy.PlayerGotKicked += Die;
+        PlayerDeathFromFallingOff.FallOff += Die;
     }
 
     private void OnDisable()
     {
-        Boss.PlayerGotKicked -= Die;
+        Enemy.PlayerGotKicked -= Die;
+        PlayerDeathFromFallingOff.FallOff -= Die;
+    }
+
+    private void Die()
+    {
+        StopAllCoroutines();
+        _animator.SetTrigger("Death");
+        PlayerLost?.Invoke();
     }
 
     private void Update()
@@ -39,9 +49,8 @@ public class PlayerMovement : MonoBehaviour
         //temporary
         if (!_isRunning)
             if (Input.GetMouseButtonDown(1))
-            {
-                Coroutine coroutine = StartCoroutine(LevelRun());
-            }
+                StartCoroutine(LevelRun());
+
         //temporary
 
         if (_movementSlider.IsHeld && _movementSlider.value != 0)
@@ -88,17 +97,6 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("ToTheLeft", false);
         if (_animator.GetBool("ToTheRight"))
             _animator.SetBool("ToTheRight", false);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-            Die();
-    }
-
-    private void Die()
-    {
-        Debug.Log("You Lost");
     }
 
     private void OnTriggerEnter(Collider other)

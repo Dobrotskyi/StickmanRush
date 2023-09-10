@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,8 +5,6 @@ namespace EnemyMechanics
 {
     public class Boss : Enemy
     {
-        public static event Action PlayerGotKicked;
-
         protected override int EnemyDeathAnimCount => 1;
         protected override int HP { set; get; } = GameConfig.BossHP;
 
@@ -49,11 +46,6 @@ namespace EnemyMechanics
                 }
                 yield return new WaitForFixedUpdate();
             }
-        }
-
-        private void PlayerKickedAnimEvent()
-        {
-            PlayerGotKicked?.Invoke();
         }
     }
 }

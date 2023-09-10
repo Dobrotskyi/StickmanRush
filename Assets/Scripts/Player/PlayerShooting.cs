@@ -16,12 +16,14 @@ public class PlayerShooting : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
         _playerMovement.PlayerMovingAtPosition += StopAllCoroutines;
         _playerMovement.PlayerReadyForBoss += StartShooting;
+        PlayerMovement.PlayerLost += StopAllCoroutines;
     }
 
     private void OnDisable()
     {
         _playerMovement.PlayerMovingAtPosition -= StopAllCoroutines;
         _playerMovement.PlayerReadyForBoss -= StartShooting;
+        PlayerMovement.PlayerLost -= StopAllCoroutines;
     }
 
     private void Update()

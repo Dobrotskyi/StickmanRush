@@ -559,7 +559,12 @@ PrefabInstance:
     - target: {fileID: 8014089526055776936, guid: 48fffba7b8b83c64f89e6940db3e829d,
         type: 3}
       propertyPath: m_WarningMessage
-      value: 
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'spine_02'\n\tTransform 'spine_01'\n\tTransform
+        'hand_l'\n\tTransform 'lowerarm_l'\n\tTransform 'lowerarm_r'\n\tTransform
+        'hand_r'\n\tTransform 'upperarm_l'\n\tTransform 'upperarm_r'\n\tTransform
+        'spine_03'\n\tTransform 'spine_02'\n\tand more ..."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -593,6 +598,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6341553684258268026}
+    - targetCorrespondingSourceObject: {fileID: 1775804554823676289, guid: 48fffba7b8b83c64f89e6940db3e829d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8333439006389301879}
   m_SourcePrefab: {fileID: 100100000, guid: 48fffba7b8b83c64f89e6940db3e829d, type: 3}
 --- !u!4 &124248934141754141 stripped
 Transform:
@@ -698,6 +707,18 @@ MonoBehaviour:
   - m_Rig: {fileID: 6618292353135529317}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &-8333439006389301879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354349052111391973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f85aabf25d192c40b6e6cee55bed0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4645832257228999207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8525500700558505795, guid: 48fffba7b8b83c64f89e6940db3e829d,
