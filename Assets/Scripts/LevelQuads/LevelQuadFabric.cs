@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 namespace LevelQuads
@@ -6,7 +5,7 @@ namespace LevelQuads
     public class LevelQuadFabric : MonoBehaviour
     {
         private int _levelSectionBeforeBoss = 0;
-        [SerializeField] private LevelQuad _quad;
+        [SerializeField] private LevelQuad _basicQuad;
         [SerializeField] private BossQuad _bossQuad;
 
         private int _spawnedSections = 0;
@@ -24,26 +23,17 @@ namespace LevelQuads
         private void SpawnNewQuad(Transform quadTransform)
         {
             if (_spawnedSections == _levelSectionBeforeBoss)
-                SpawnBossQuad(quadTransform);
+                SpawnLevelQuad(quadTransform, _bossQuad.gameObject);
             else
-                SpawnBasicQuad(quadTransform);
+                SpawnLevelQuad(quadTransform, _basicQuad.gameObject);
         }
 
-        private void SpawnBasicQuad(Transform quadTransform)
+        private void SpawnLevelQuad(Transform quadTransform, GameObject newQuad)
         {
             Vector3 newPos = quadTransform.position;
-            Bounds bounds = quadTransform.GetComponents<Collider>().First(c => !c.isTrigger).bounds;
-            newPos.z += bounds.size.z;
-            Instantiate(_quad, newPos, quadTransform.rotation);
+            newPos.z += quadTransform.localScale.y / 2 + newQuad.transform.localScale.y / 2;
+            Instantiate(newQuad, newPos, quadTransform.rotation);
             _spawnedSections++;
-        }
-
-        private void SpawnBossQuad(Transform quadTransform)
-        {
-            Vector3 newPos = quadTransform.position;
-            Bounds bounds = quadTransform.GetComponents<Collider>().First(c => !c.isTrigger).bounds;
-            newPos.z += bounds.size.z / 2 + _bossQuad.transform.localScale.y / 2;
-            Instantiate(_bossQuad, newPos, quadTransform.rotation);
         }
     }
 }
