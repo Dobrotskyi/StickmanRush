@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _wonMenu;
     [SerializeField] private GameObject _playButton;
     [SerializeField] private GameObject _inputSlider;
+    [SerializeField] private GameObject _store;
 
     private void OnEnable()
     {
@@ -34,5 +35,10 @@ public class UIManager : MonoBehaviour
     {
         _playButton.SetActive(false);
         _inputSlider.SetActive(true);
+    }
+
+    public void OpenOrCloseStore()
+    {
+        _store.SetActive(!_store.activeSelf);
     }
 }
