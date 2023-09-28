@@ -19,7 +19,6 @@ public class LevelsPassedTracker : MonoBehaviour
     }
     private void OnLevelPassed()
     {
-        Debug.Log("PassedLevel");
         PlayerPrefs.SetInt("PassedLevelsCount", PlayerPrefs.GetInt("PassedLevelsCount") + 1);
     }
 
