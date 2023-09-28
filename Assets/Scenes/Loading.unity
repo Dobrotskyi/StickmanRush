@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.14150941, g: 0.13729364, b: 0.13149695, a: 1}
+  m_Color: {r: 1, g: 0.5253344, b: 0.033018887, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 1671180091}
   - component: {fileID: 1671180094}
   m_Layer: 0
-  m_Name: LevelLoader
+  m_Name: LevelLoaderCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
