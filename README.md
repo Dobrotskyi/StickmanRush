@@ -12,7 +12,8 @@ This is simple HC game where player can complete levels, defeat bosses and upgra
 ![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/dab0e894-776e-4404-991d-ca8868204e26)
 ![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/5f0be8ff-3ce1-47ac-ab40-bfa768bf4a51)
 ![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/35f4843e-c74b-42ae-a944-cc252cb53eee)
-![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/40cc1f05-c372-4ae9-a70a-b7e5006253b2)
+![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/0d88de80-2662-4eea-a91e-4d0f35014a19)
+
 
 
 
