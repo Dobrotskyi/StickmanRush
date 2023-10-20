@@ -48,7 +48,7 @@ public class Store : MonoBehaviour
         UpdateDamageText();
         UpdateFireRateText();
 
-        _upgradeDamageAmt.text += GameBalance.DamageUpgrade.ToString();
+        _upgradeDamageAmt.text += " " + GameBalance.DamageUpgrade.ToString();
     }
 
     private void UpdateDamageText()
