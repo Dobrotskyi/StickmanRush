@@ -5,14 +5,16 @@ Game was built for android.
 
 This is simple HC game where player can complete levels, defeat bosses and upgrade characteristics.
 
+You can find some videos of me playing this game here: https://youtu.be/PxvXv_9Lg8A 
+
 # Here are some screenshots.
-![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/c9468206-5f6a-4f53-afd3-dcdfb60ccaf5)
-![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/74d525e6-19d0-4d6c-b0b0-0ee7ba22cd18)
-![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/01f5708e-9ed3-4b8a-94b2-7b2c6f389923)
-![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/dab0e894-776e-4404-991d-ca8868204e26)
-![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/5f0be8ff-3ce1-47ac-ab40-bfa768bf4a51)
-![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/35f4843e-c74b-42ae-a944-cc252cb53eee)
-![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/0d88de80-2662-4eea-a91e-4d0f35014a19)
+![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/e7c4b63d-a27a-4b0d-8344-f14f65322be2)
+![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/08b86ffd-1466-4a23-957f-dbd4ec8ceb2c)
+![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/567967d0-f2a5-495e-bfd7-73194bee7077)
+![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/103b8dfe-0a30-4234-9974-94385453e752)
+![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/64c7241f-076e-4ee4-a06a-bf695e568f78)
+![image](https://github.com/Dobrotskyi/StickmanRush/assets/118120050/3a2c72ef-6813-496f-afb7-8534fc1ae1d2)
+
 
 
 
